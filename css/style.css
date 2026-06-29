@@ -1,11 +1,12 @@
 :root {
   --black-deep: #111111;
   --black-card: #1a1a1a;
-  --gold: #D4AF37;
-  --gold-hover: #AA8226;
+  --gold: #d4af37;
+  --gold-hover: #aa8226;
   --white: #ffffff;
   --off-white: #f5f5f5;
   --text-muted: #a0a0a0;
+  --border-dark: #2c2c2c;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -22,9 +23,9 @@ body {
 }
 
 header {
-  background: #000000;
-  color: var(--white);
   padding: 28px 0 18px;
+  color: var(--white);
+  background: #000000;
   border-bottom: 1px solid var(--gold);
 }
 
@@ -48,62 +49,63 @@ nav {
 }
 
 nav a {
-  color: var(--white);
-  text-decoration: none;
   margin-right: 18px;
+  color: var(--white);
   font-weight: bold;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
   color: var(--gold);
-  text-decoration: none;
 }
 
 .hero {
-  background: linear-gradient(135deg, #1f1f1f 0%, #050505 100%);
   padding: 80px 0;
+  background: linear-gradient(135deg, #1f1f1f 0%, #050505 100%);
   border-bottom: 1px solid #222;
 }
 
 .hero h2 {
-  font-size: 2.4rem;
   max-width: 760px;
   margin-bottom: 12px;
   color: var(--white);
+  font-size: 2.4rem;
 }
 
 .hero p {
   max-width: 760px;
-  font-size: 1.1rem;
   color: var(--text-muted);
+  font-size: 1.1rem;
 }
 
 .button {
   display: inline-block;
   margin: 12px 10px 0 0;
   padding: 12px 18px;
-  background: var(--gold);
   color: var(--black-deep);
-  text-decoration: none;
+  background: var(--gold);
   border-radius: 5px;
   font-weight: bold;
+  text-decoration: none;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .button:hover {
   background: var(--gold-hover);
+  transform: translateY(-2px);
 }
 
 .button.secondary {
-  background: transparent;
   color: var(--white);
+  background: transparent;
   border: 2px solid var(--white);
 }
 
 .button.secondary:hover {
-  background: var(--white);
   color: var(--black-deep);
+  background: var(--white);
 }
 
 .cards {
@@ -114,10 +116,10 @@ nav a:hover {
 }
 
 .card {
-  background: var(--black-card);
-  border: 1px solid #2c2c2c;
-  border-radius: 8px;
   padding: 24px;
+  background: var(--black-card);
+  border: 1px solid var(--border-dark);
+  border-radius: 8px;
   box-shadow: var(--shadow);
 }
 
@@ -139,18 +141,18 @@ nav a:hover {
 }
 
 .spotlight {
-  background: var(--black-card);
-  border-left: 6px solid var(--gold);
   margin-bottom: 50px;
   padding: 28px;
+  background: var(--black-card);
+  border-left: 6px solid var(--gold);
   box-shadow: var(--shadow);
 }
 
 footer {
-  background: #000000;
-  color: var(--text-muted);
   padding: 24px 0;
+  color: var(--text-muted);
   text-align: center;
+  background: #000000;
   border-top: 1px solid #222;
 }
 
@@ -208,9 +210,10 @@ footer {
 }
 
 .module-card::after {
-  content: "";
   position: absolute;
   inset: 0;
+  z-index: 0;
+  content: "";
   background: linear-gradient(
     135deg,
     rgba(0, 0, 0, 0.3),
@@ -258,6 +261,16 @@ footer {
   color: var(--off-white);
 }
 
+.module-card ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: var(--off-white);
+}
+
+.module-card li {
+  margin-bottom: 4px;
+}
+
 .module-link {
   margin-top: auto;
   padding-top: 24px;
@@ -265,46 +278,317 @@ footer {
   font-weight: 800;
 }
 
-/* Background image handling with sleek dark tint overlay */
+/* Module background images */
+
 .module-1 {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(17, 17, 17, 0.8)),
-    url("../images/module-place.jpg") center/cover;
+  background: url("../images/module-place.jpg") center / cover;
 }
 
 .module-2 {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(17, 17, 17, 0.8)),
-    url("../images/module-data.jpg") center/cover;
+  background: url("../images/module-data.jpg") center / cover;
 }
 
 .module-3 {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(17, 17, 17, 0.8)),
-    url("../images/module-qgis.jpg") center/cover;
+  background: url("../images/module-qgis.jpg") center / cover;
 }
 
 .module-4 {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(17, 17, 17, 0.8)),
-    url("../images/module-field.jpg") center/cover;
+  background: url("../images/module-field.jpg") center / cover;
 }
 
 .module-5 {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(17, 17, 17, 0.8)),
-    url("../images/module-drone.jpg") center/cover;
+  background: url("../images/module-drone.jpg") center / cover;
 }
 
 .module-6 {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(17, 17, 17, 0.8)),
-    url("../images/module-analysis.jpg") center/cover;
+  background: url("../images/module-analysis.jpg") center / cover;
 }
+
+.module-7 {
+  background: url("../images/module-web-gis.jpg") center / cover;
+}
+
+.module-8 {
+  background: url("../images/module-capstone.jpg") center / cover;
+}
+
+/* ==============================
+   CAREERS PAGE
+   ============================== */
+
+.careers-page {
+  padding: 72px 0;
+}
+
+.careers-hero {
+  max-width: 780px;
+  margin-bottom: 48px;
+}
+
+.careers-hero h2 {
+  margin: 0 0 14px;
+  color: var(--white);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.careers-hero p {
+  max-width: 720px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.careers-section {
+  margin-top: 32px;
+  padding: 36px;
+  background: var(--black-card);
+  border: 1px solid var(--border-dark);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.careers-section h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: var(--white);
+  font-size: 1.8rem;
+}
+
+.careers-section > p {
+  color: var(--text-muted);
+}
+
+.careers-pathways {
+  background: linear-gradient(135deg, #1f1f1f 0%, #121212 100%);
+}
+
+.careers-job-search {
+  background: #181818;
+}
+
+.careers-keywords-section {
+  background: #151515;
+}
+
+.careers-portfolio {
+  background: linear-gradient(135deg, #201b0a 0%, #171717 100%);
+  border-left: 6px solid var(--gold);
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 20px;
+}
+
+/* Career pathway cards */
+
+.career-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+  padding: 28px;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.35),
+    rgba(17, 17, 17, 0.95)
+  );
+  border: 1px solid #343434;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.career-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  content: "";
+  background: var(--gold);
+}
+
+.career-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65);
+}
+
+.career-card:focus-within {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.career-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 6px 12px;
+  color: var(--black-deep);
+  background: var(--gold);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.career-card h3 {
+  margin: 14px 0;
+  color: var(--white);
+  font-size: 1.35rem;
+}
+
+.career-card p {
+  margin: 0;
+  color: var(--off-white);
+}
+
+.career-card a {
+  margin-top: auto;
+  padding-top: 24px;
+  color: var(--gold);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.career-card a:hover {
+  color: var(--gold-hover);
+}
+
+.job-search-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.job-board-button {
+  display: inline-block;
+  padding: 12px 18px;
+  color: var(--black-deep);
+  background: var(--gold);
+  border-radius: 5px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.job-board-button:hover {
+  background: var(--gold-hover);
+  transform: translateY(-2px);
+}
+
+.career-keywords {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px 24px;
+  margin: 0;
+  padding-left: 20px;
+  color: var(--off-white);
+}
+
+.career-keywords li::marker {
+  color: var(--gold);
+}
+
+/* ==============================
+   MOBILE
+   ============================== */
 
 @media (max-width: 650px) {
   .module-card {
     min-height: 235px;
     padding: 24px;
   }
+
+  .careers-page {
+    padding: 50px 0;
+  }
+
+  .careers-section {
+    padding: 24px;
+  }
+
+  .career-card {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .job-board-button {
+    width: 100%;
+    text-align: center;
+  }
+/* FORCE CAREER CARD STYLING */
+
+.career-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)) !important;
+  gap: 20px !important;
+}
+
+.career-card {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 280px !important;
+  padding: 28px !important;
+  overflow: hidden !important;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.35),
+    rgba(17, 17, 17, 0.95)
+  ) !important;
+  border: 1px solid #343434 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.career-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 5px !important;
+  background: #d4af37 !important;
+}
+
+.career-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: #d4af37 !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65) !important;
+}
+
+.career-badge {
+  display: inline-flex !important;
+  width: fit-content !important;
+  padding: 6px 12px !important;
+  color: #111111 !important;
+  background: #d4af37 !important;
+  border-radius: 999px !important;
+  font-size: 0.75rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 1px !important;
+}
+
+.career-card h3 {
+  margin: 14px 0 !important;
+  color: #ffffff !important;
+  font-size: 1.35rem !important;
+}
+
+.career-card p {
+  margin: 0 !important;
+  color: #f5f5f5 !important;
+}
+
+.career-card a {
+  margin-top: auto !important;
+  padding-top: 24px !important;
+  color: #d4af37 !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
 }
