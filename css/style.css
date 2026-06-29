@@ -113,3 +113,157 @@ footer {
   padding: 24px 0;
   text-align: center;
 }
+/* ==============================
+   CLICKABLE GIS MODULE BLOCKS
+   ============================== */
+
+.module-section {
+  padding: 72px 0;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  margin-bottom: 6px;
+  color: var(--green);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.section-heading p:last-child {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 20px;
+}
+
+.module-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 270px;
+  padding: 28px;
+  overflow: hidden;
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.module-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(11, 31, 51, 0.2),
+    rgba(11, 31, 51, 0.82)
+  );
+  pointer-events: none;
+}
+
+.module-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.module-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(11, 31, 51, 0.28);
+}
+
+.module-card:focus {
+  outline: 4px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.module-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  color: var(--navy);
+  background: var(--gold);
+  border-radius: 50%;
+  font-weight: 900;
+}
+
+.module-card h3 {
+  margin: 0 0 10px;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+.module-card p {
+  margin: 0;
+  color: #edf5fa;
+}
+
+.module-link {
+  margin-top: auto;
+  padding-top: 24px;
+  color: var(--gold);
+  font-weight: 800;
+}
+
+/* Different visual feel for each module */
+.module-1 {
+  background:
+    linear-gradient(rgba(11, 31, 51, 0.25), rgba(11, 31, 51, 0.72)),
+    url("../images/module-place.jpg") center/cover;
+}
+
+.module-2 {
+  background:
+    linear-gradient(rgba(11, 31, 51, 0.25), rgba(11, 31, 51, 0.72)),
+    url("../images/module-data.jpg") center/cover;
+}
+
+.module-3 {
+  background:
+    linear-gradient(rgba(11, 31, 51, 0.25), rgba(11, 31, 51, 0.72)),
+    url("../images/module-qgis.jpg") center/cover;
+}
+
+.module-4 {
+  background:
+    linear-gradient(rgba(11, 31, 51, 0.25), rgba(11, 31, 51, 0.72)),
+    url("../images/module-field.jpg") center/cover;
+}
+
+.module-5 {
+  background:
+    linear-gradient(rgba(11, 31, 51, 0.25), rgba(11, 31, 51, 0.72)),
+    url("../images/module-drone.jpg") center/cover;
+}
+
+.module-6 {
+  background:
+    linear-gradient(rgba(11, 31, 51, 0.25), rgba(11, 31, 51, 0.72)),
+    url("../images/module-analysis.jpg") center/cover;
+}
+
+@media (max-width: 650px) {
+  .module-card {
+    min-height: 235px;
+    padding: 24px;
+  }
+}
