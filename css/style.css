@@ -1,3 +1,14 @@
+:root {
+  --black-deep: #111111;
+  --black-card: #1a1a1a;
+  --gold: #D4AF37;
+  --gold-hover: #AA8226;
+  --white: #ffffff;
+  --off-white: #f5f5f5;
+  --text-muted: #a0a0a0;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -6,14 +17,15 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  color: #1d2733;
-  background: #f4f6f8;
+  color: var(--off-white);
+  background: var(--black-deep);
 }
 
 header {
-  background: #102a43;
-  color: white;
+  background: #000000;
+  color: var(--white);
   padding: 28px 0 18px;
+  border-bottom: 1px solid var(--gold);
 }
 
 .container {
@@ -23,10 +35,12 @@ header {
 
 header h1 {
   margin: 0;
+  color: var(--gold);
 }
 
 header p {
   margin-top: 6px;
+  color: var(--text-muted);
 }
 
 nav {
@@ -34,45 +48,62 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: var(--white);
   text-decoration: none;
   margin-right: 18px;
   font-weight: bold;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: var(--gold);
+  text-decoration: none;
 }
 
 .hero {
-  background: #d9eaf7;
+  background: linear-gradient(135deg, #1f1f1f 0%, #050505 100%);
   padding: 80px 0;
+  border-bottom: 1px solid #222;
 }
 
 .hero h2 {
   font-size: 2.4rem;
   max-width: 760px;
   margin-bottom: 12px;
+  color: var(--white);
 }
 
 .hero p {
   max-width: 760px;
   font-size: 1.1rem;
+  color: var(--text-muted);
 }
 
 .button {
   display: inline-block;
   margin: 12px 10px 0 0;
   padding: 12px 18px;
-  background: #0b6e4f;
-  color: white;
+  background: var(--gold);
+  color: var(--black-deep);
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background: var(--gold-hover);
 }
 
 .button.secondary {
-  background: #102a43;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.button.secondary:hover {
+  background: var(--white);
+  color: var(--black-deep);
 }
 
 .cards {
@@ -83,36 +114,46 @@ nav a:hover {
 }
 
 .card {
-  background: white;
+  background: var(--black-card);
+  border: 1px solid #2c2c2c;
   border-radius: 8px;
   padding: 24px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
 }
 
 .card h3 {
   margin-top: 0;
+  color: var(--white);
 }
 
 .card a,
 .spotlight a {
-  color: #0b6e4f;
+  color: var(--gold);
   font-weight: bold;
   text-decoration: none;
 }
 
+.card a:hover,
+.spotlight a:hover {
+  color: var(--gold-hover);
+}
+
 .spotlight {
-  background: white;
-  border-left: 6px solid #f2b134;
+  background: var(--black-card);
+  border-left: 6px solid var(--gold);
   margin-bottom: 50px;
   padding: 28px;
+  box-shadow: var(--shadow);
 }
 
 footer {
-  background: #102a43;
-  color: white;
+  background: #000000;
+  color: var(--text-muted);
   padding: 24px 0;
   text-align: center;
+  border-top: 1px solid #222;
 }
+
 /* ==============================
    CLICKABLE GIS MODULE BLOCKS
    ============================== */
@@ -128,7 +169,7 @@ footer {
 
 .eyebrow {
   margin-bottom: 6px;
-  color: var(--green);
+  color: var(--gold);
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 1.4px;
@@ -137,12 +178,12 @@ footer {
 
 .section-heading h2 {
   margin: 0;
-  color: var(--navy);
+  color: var(--white);
   font-size: clamp(2rem, 4vw, 3.2rem);
 }
 
 .section-heading p:last-child {
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: 1.05rem;
 }
 
@@ -172,8 +213,8 @@ footer {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(11, 31, 51, 0.2),
-    rgba(11, 31, 51, 0.82)
+    rgba(0, 0, 0, 0.3),
+    rgba(17, 17, 17, 0.9)
   );
   pointer-events: none;
 }
@@ -185,7 +226,7 @@ footer {
 
 .module-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(11, 31, 51, 0.28);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 .module-card:focus {
@@ -200,7 +241,7 @@ footer {
   width: 48px;
   height: 48px;
   margin-bottom: 24px;
-  color: var(--navy);
+  color: var(--black-deep);
   background: var(--gold);
   border-radius: 50%;
   font-weight: 900;
@@ -214,7 +255,7 @@ footer {
 
 .module-card p {
   margin: 0;
-  color: #edf5fa;
+  color: var(--off-white);
 }
 
 .module-link {
@@ -224,40 +265,40 @@ footer {
   font-weight: 800;
 }
 
-/* Different visual feel for each module */
+/* Background image handling with sleek dark tint overlay */
 .module-1 {
   background:
-    linear-gradient(rgba(11, 31, 51, 0.25), rgba(11, 31, 51, 0.72)),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(17, 17, 17, 0.8)),
     url("../images/module-place.jpg") center/cover;
 }
 
 .module-2 {
   background:
-    linear-gradient(rgba(11, 31, 51, 0.25), rgba(11, 31, 51, 0.72)),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(17, 17, 17, 0.8)),
     url("../images/module-data.jpg") center/cover;
 }
 
 .module-3 {
   background:
-    linear-gradient(rgba(11, 31, 51, 0.25), rgba(11, 31, 51, 0.72)),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(17, 17, 17, 0.8)),
     url("../images/module-qgis.jpg") center/cover;
 }
 
 .module-4 {
   background:
-    linear-gradient(rgba(11, 31, 51, 0.25), rgba(11, 31, 51, 0.72)),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(17, 17, 17, 0.8)),
     url("../images/module-field.jpg") center/cover;
 }
 
 .module-5 {
   background:
-    linear-gradient(rgba(11, 31, 51, 0.25), rgba(11, 31, 51, 0.72)),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(17, 17, 17, 0.8)),
     url("../images/module-drone.jpg") center/cover;
 }
 
 .module-6 {
   background:
-    linear-gradient(rgba(11, 31, 51, 0.25), rgba(11, 31, 51, 0.72)),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(17, 17, 17, 0.8)),
     url("../images/module-analysis.jpg") center/cover;
 }
 
